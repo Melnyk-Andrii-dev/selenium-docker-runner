@@ -1,0 +1,20 @@
+version: "3"
+services:
+  vendor-portal:
+    image: saoqaengineer/selenium
+    environment:
+      - BROWSER=chrome
+      - HUB_HOST=hub
+      - THREAD_COUNT=1
+      - TEST_SUITE=vendor-portal.xml
+    volumes:
+      - C:\workspace\06-jenkins-ci-cd\10-runner-approach-1\output\vendor-portal:/home/selenium-docker/test-output
+  flight-reservation:
+    image: saoqaengineer/selenium
+    environment:
+      - BROWSER=firefox
+      - HUB_HOST=hub
+      - THREAD_COUNT=1
+      - TEST_SUITE=flight-reservation.xml
+    volumes:
+      - C:\workspace\06-jenkins-ci-cd\10-runner-approach-1\output\flight-reservation:/home/selenium-docker/test-output
